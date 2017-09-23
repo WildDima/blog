@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	db.AutoMigrate(&model.Post{})
+	db.AutoMigrate(&models.Post{})
 	r := gin.Default()
 	router.Route(r)
 	r.Run()
