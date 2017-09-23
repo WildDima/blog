@@ -3,14 +3,13 @@ package main
 import (
 	"blogy/app/models"
 	"blogy/app/router"
+	"blogy/db"
 	"github.com/gin-gonic/gin"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"log"
 )
 
 func main() {
-	db, err := gorm.Open("postgres", "host=localhost port=5432 user=blog_user dbname=blog_db sslmode=disable password=qwerty123")
+	db, err := database.Connect()
 	if err != nil {
 		log.Fatal(err)
 	}
