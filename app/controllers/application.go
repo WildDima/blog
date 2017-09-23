@@ -1,6 +1,9 @@
 package controllers
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
+)
 
 type JSON map[string]interface{}
 
@@ -8,6 +11,7 @@ type Application struct {
 	status  int
 	body    JSON
 	context *gin.Context
+	DB      *gorm.DB
 }
 
 func (c Application) render() {
