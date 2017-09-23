@@ -1,0 +1,4 @@
+db:
+  url: postgresql://postgres@127.0.0.1/blog
+  user:
+  password:
