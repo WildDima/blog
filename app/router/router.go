@@ -9,5 +9,10 @@ import (
 func Route(r *gin.Engine, db *gorm.DB) {
 	home := controllers.Home{}
 	home.DB = db
+
+	posts := controllers.Posts{}
+	posts.DB = db
+
 	r.GET("/", home.Index)
+	r.POST("/posts", posts.Create)
 }
